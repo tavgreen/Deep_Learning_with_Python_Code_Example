@@ -1,4 +1,4 @@
-# Learning Convolutional Neural Network with Python Example #
+# Deep Learning with Python Code Example #
 
 ## Machine Learning ##
 on progress
