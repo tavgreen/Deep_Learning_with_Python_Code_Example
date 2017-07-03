@@ -24,6 +24,8 @@ The result of machine learning program above section to classify genre of movie 
 4. **Evaluating Model**
 5. **Testing Model**
 
+To be continue...
+
 ## Convolutional Neural Network ##
 on progress
 
