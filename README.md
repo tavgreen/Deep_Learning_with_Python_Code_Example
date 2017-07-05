@@ -2,6 +2,11 @@
 ## Basic Python Programming ##
 All projects will be run on [Python3.6](https://www.python.org/downloads/release/python-360/), [Tensorflow](http://tensorflow.org),[Keras](http://keras.io/),[Sklearn](http://scikit-learn.org/stable/) and Matplotlib. If you are not familiar with python programming fundamental, [Tutorialspoint](http://www.tutorialspoint.com/python/) can be utililized for practising python programming. 
 ## Machine Learning ##
+Machine learning is useful to classify or predict unstructured data. It can be applied in Speech Processing, Computer Vision and other fields. Several examples of implementation of Machine Learning are:
+1. suppose we want to predict music genre given music data. Example program from [Stevetjoa](https://github.com/stevetjoa/stanford-mir) can be useful to describe how music genre can be predicted by Machine Learning.
+2. suppose we want to classify land use type, whether baseball field, water, urban and so on. machine learning can be useful for classifying the type of land use. Read [Land Use Classification](https://github.com/tavgreen/landuse_classification).
+3. suppose we want to improve image quality or incomplete image, machine learning can be useful for this task. Read [Image Generation](https://github.com/tavgreen/generating_images)
+
 ### Project Description ###
 Deep Learning is a part of machine learning task, so the first thing should be accomplished is to understand basic of machine learning. This [book chapter 5](http://www.deeplearningbook.org) can be utilized to understand machine learning at briefly. In order to classify or predict some cases using machine learning, dataset for training data is required. in this project, we use [Movie Genre Dataset]((https://www.kaggle.com/neha1703/movie-genre-from-its-poster)) from [Kaggle](https://www.kaggle.com/) to classify genre of image movie poster. Given the movie poster of movie, we want to classify genre of that movie like Adventure, Comedy, Drama and so on. Here the step of conducting this project:
 1. **Download dataset**: [Movie Genre Dataset]((https://www.kaggle.com/neha1703/movie-genre-from-its-poster)) 
