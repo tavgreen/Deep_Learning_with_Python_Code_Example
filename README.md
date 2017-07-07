@@ -35,6 +35,45 @@ Deep learning can be developed by using several tools or libraries like [Tensorf
 
 ![Fig.2](https://raw.github.com/tavgreen/generating_images/master/file/formula.png?raw=true "Perceptron")
 
+There are two input: x1 = 1 and x2 = 0, with initialization weight w1 = -0.5 and initialization w2 = 0.2. We want to compute y (output) as similar as ground truth / y_true so we need to arrange our architecture well. input or output can't be changed but we can modify value of w1 and w2 in order to make input as similar as output. let say we have x = image of cat, y1 = cat label and y2 = dog label. so our system should be make x as similar y1. 
+
+In this case, we give **y_true = 1**. Before computing y, we have to compute h1 first. output from h1 will be activated using [sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function). Later, we will use deep learning architecture that consists of more hidden like h1 to produce y as similar as y_true. Here step-by-step perceptron implementation in Tensorflow:
+
+- Import Tensorflow library.
+```python
+import tensorflow as tf
+```
+in the code above, tensorflow is aliased by tf. so later you just called 'tf' to use tensorflow
+
+- Define input data. 
+```python
+x1 = tf.constant(1.0,name='x1')
+x2 = tf.constant(0.0,name='x2')
+```
+in the code above, *tf.constant* can be used to define constant value and store it into x1 and x2.
+
+- define weight
+```python
+w1 = tf.Variable(-0.5,name='w1')
+w2 = tf.Variable(0.2,name='w2')
+```
+in the code above, *tf.Variable* can be used to define variable (can be modify) and give default value -0.5 and 0.2 respectively to w1 and w2.
+
+- Define hidden layer.
+```python
+h11 = tf.multiply(x1,w1)
+h12 = tf.multiply(x2,w2)
+h1 = tf.add(h11,h12)
+```
+in the code above, we do multiplication between x1 and w1 (look the image architecture) and multiplication between x2 and w2. the result of both multiplication will be added into h1.
+
+- Define output layer
+```python
+out = tf.nn.sigmoid(h1)
+```
+in the code above, we give activation function(sigmoid) to h1. you can check [Tensorflow nn library](https://www.tensorflow.org/api_docs/python/tf/nn)  for more activationa function. The result is stored at 'out' variable.
+
+-
 
 
 ## Convolutional Neural Network ##
