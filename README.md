@@ -30,7 +30,7 @@ The result of machine learning program above section to classify genre of movie 
 4. **Evaluating Model**
 5. **Testing Model**
 
-### Program ###
+### Sample Program 1 ###
 Deep learning can be developed by using several tools or libraries like [Tensorflow](http://tensorflow.org), [Pytorch](http://pytorch.org) and so on. in this tutorials, we will use Tensorflow running on Python. The first step is to install environment tools like [Anaconda](https://www.continuum.io/downloads) to easily developed Python code and its libraries. Python is already available in Anaconda, so you dont have to install it anymore. Tensorflow should be install after finishing Anaconda installation by following this [Tensorflow Installation in Conda](https://anaconda.org/conda-forge/tensorflow). We will create simple Neural Network (Perceptron) as follows:
 
 ![Fig.2](https://raw.github.com/tavgreen/generating_images/master/file/formula.png?raw=true "Perceptron")
@@ -149,6 +149,14 @@ for i in range(1000):
 #epoch 999: 0.980032
 ```
 in the code above, we try to do 1000 epochs to compute gradient and update the weight with the result is 0.980032. you can do update weight and compute gradient until convergence (no update again/value can not be updated)
+
+### Sample Program 2 ###
+We are going deeper with Tensorflow, Let say i have [Multi Layer Perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) like below picture:  
+![Fig.3](https://raw.github.com/tavgreen/Deep_Learning_with_Python_Code_Example/master/file/mlp.png?raw=true "MLP")
+
+There are several layer: 2 input layer[1,0], hidden1 = 32 neuron, hidden2 = 32 neuron and output layer (y_true) = 1. we want to initialize weight and bias randomly. each output from hidden layer will be activated using ReLU and in the output layer will be activated using Sigmoid. our task is to training a data so y_predict as similar as  y_true. 
+Here step-by-step perceptron implementation in Tensorflow:
+
 
 ## Convolutional Neural Network ##
 
