@@ -78,14 +78,49 @@ in the code above, we give activation function(sigmoid) to h1. you can check [Te
 ```python
 loss = tf.pow((y_predict - y_true),2)
 ```
-in the code above, we define loss function using Mean Square Error (MSE). we want to know how much loss y_predict(computation in your model) to ground truth (y_true)
-![Fig.3 MSE](https://wikimedia.org/api/rest_v1/media/math/render/svg/67b9ac7353c6a2710e35180238efe54faf4d9c15)
+in the code above, we define loss function using Mean Square Error (MSE). we want to know how much loss of y_predict(computation in your model) to ground truth (y_true).
+
+![Fig.3 MSE from Wikipedia](https://wikimedia.org/api/rest_v1/media/math/render/svg/67b9ac7353c6a2710e35180238efe54faf4d9c15)
 
 - define optimizer
+```python
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.5)
+```
+in the code above, we define Gradient Descent Optimizer to compute gradient of architecture (including weight) so we can do backpropagation to update weight. 
 
-is that finish? **NO, you have not run the model**. The model have just created, but you have not run the model. 
+- compute Gradient
+```python
+grad = optimizer.compute_gradients(loss)
+```
+in the code above, gradient descent will be worked to compute all of gradient from loss until input. is that finish? **NO, you have not run the model**. The model have just created, but you have not run the model. 
 
+- define a session
+```python
+sess = tf.Session()
+```
+in the code above, *tf.Session()* can be useful to define session of program run. to run a program, just called *sess.run(..)*
 
+- running all variables
+```python
+sess.run(tf.initialize_all_variables())
+```
+you have already defined x1,x2,w1,w2,h1,y,loss that should be run first in order to compute a gradient. to run initialize variables that already define, use *tf.initialize_all_variables()*
+
+- running apply gradient
+```python
+sess.run(optimizer.apply_gradients(grad))
+print(sess.run(y))
+```
+
+- make it in epochs
+```python
+train_step = tf.train.GradientDescentOptimizer(0.025).minimize(loss)
+for i in range(10):
+  sess.run(train_step)
+  print('epoch ',str(i),' : ',str(sess.run(y)))
+```
+
+- More epochs until convergence
 ## Convolutional Neural Network ##
 
 **not yet finished**
