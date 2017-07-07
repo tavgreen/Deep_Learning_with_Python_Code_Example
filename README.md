@@ -17,10 +17,10 @@ Deep Learning is a part of machine learning task, so the first thing should be a
 6. **Testing New Data**:
 
 ### Program ###
-not yet finished
+**not yet finished**
 
 ### Result ###
-not yet finished
+**not yet finished**
 
 ## Deep Learning ##
 The result of machine learning program above section to classify genre of movie poster is good enough for simple cases. but above program use handcrafted features that not always fit with certain large-scale data. For example we want to make an output as similar as an input (image generation). Given x = {images-1,..images-n}, we want to draw output y as similar as x, this case can be solved using Auto-Encoder (Read my previous [articles](https://github.com/tavgreen/generating_images)). another case is imagine we want to classify genre movie poster without handcrafted feature(edge orientation of image, RGB Histogram and so on) and change it into Neural Network that can make result as similar as data. In this project, we want to classify genre movie poster using Deep Neural Network with step as follows:
@@ -30,10 +30,15 @@ The result of machine learning program above section to classify genre of movie 
 4. **Evaluating Model**
 5. **Testing Model**
 
-To be continue...
+### Program ###
+Deep learning can be developed by using several tools or libraries like [Tensorflow](http://tensorflow.org), [Pytorch](http://pytorch.org) and so on. in this tutorials, we will use Tensorflow running on Python. The first step is to install environment tools like [Anaconda](https://www.continuum.io/downloads) to easily developed Python code and its libraries. Python is already available in Anaconda, so you dont have to install it anymore. Tensorflow should be install after finishing Anaconda installation by following this [Tensorflow Installation in Conda](https://anaconda.org/conda-forge/tensorflow). We will create simple Neural Network (Perceptron) as follows:!
+
+[Fig.2](https://raw.github.com/tavgreen/generating_images/master/file/formula.png?raw=true "Perceptron")
+
 
 ## Convolutional Neural Network ##
-on progress
+
+**not yet finished**
 
 ## References ##
 - Kaggle. [Movie Poster Dataset](https://www.kaggle.com/neha1703/movie-genre-from-its-poster)
