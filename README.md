@@ -86,7 +86,7 @@ in the code above, we define loss function using Mean Square Error (MSE). we wan
 ```python
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.5)
 ```
-in the code above, we define Gradient Descent Optimizer to compute gradient of architecture (including weight) so we can do backpropagation to update weight. 
+in the code above, we define Gradient Descent Optimizer to compute gradient of architecture (including weight) so we can do backpropagation to update weight. Learning rate is the step of gradient descent to reach optimum. you can set learning_rate higher to quicken reach global optimum, but be careful of trapping of [local optimum](https://en.wikipedia.org/wiki/Local_optimum)
 
 - compute Gradient
 ```python
@@ -109,18 +109,47 @@ you have already defined x1,x2,w1,w2,h1,y,loss that should be run first in order
 - running apply gradient
 ```python
 sess.run(optimizer.apply_gradients(grad))
-print(sess.run(y))
+print(sess.run(y_predict))
+print(sess.run(w1))
+print(sess.run(w2))
+#0.377541
+#-0.5
+#0.2
 ```
+after apply gradient to optimizer, calculation of y_predict = 0.377541 with w1 = -0.5 (default w1) and w2 = 0.2 (default w2). that result still far away from y_true = 1. so **we need more computation of gradient and update weight of networks!**
 
-- make it in epochs
+- Computation and update weight of networks as epochs
 ```python
 train_step = tf.train.GradientDescentOptimizer(0.025).minimize(loss)
 for i in range(10):
   sess.run(train_step)
-  print('epoch ',str(i),' : ',str(sess.run(y)))
+  print('epoch ',str(i),' : ',str(sess.run(y_predict)))
+#epoch 0 : 0.379261
+#...
+#epoch 9 : 0.394791
 ```
+in the code above, we try to do 10 epochs(the num of compute gradient and update weight of architecture) we can see the result of y_predict = 0.394791 in epoch 9 after computing gradient and updating gradient. The result is too far away from y_true = 1. so we can increase learning_rate = 0.5
 
-- More epochs until convergence
+```python
+train_step = tf.train.GradientDescentOptimizer(0.5).minimize(loss)
+for i in range(10):
+  sess.run(train_step)
+  print('epoch ',str(i),' : ',str(sess.run(y_predict)))
+#epoch 0: 0.463863
+..
+#epoch 9: 0.0684392
+```
+still far away from y_true, so training in more epochs
+```python
+for i in range(1000):
+  sess.run(train_step)
+  print('epoch ',str(i),' : ',str(sess.run(y_predict)))
+#epoch 0: 0.684392
+..
+#epoch 999: 0.980032
+```
+in the code above, we try to do 1000 epochs to compute gradient and update the weight with the result is 0.980032. you can do update weight and compute gradient until convergence (no update again/value can not be updated)
+
 ## Convolutional Neural Network ##
 
 **not yet finished**
