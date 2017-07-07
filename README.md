@@ -31,9 +31,10 @@ The result of machine learning program above section to classify genre of movie 
 5. **Testing Model**
 
 ### Program ###
-Deep learning can be developed by using several tools or libraries like [Tensorflow](http://tensorflow.org), [Pytorch](http://pytorch.org) and so on. in this tutorials, we will use Tensorflow running on Python. The first step is to install environment tools like [Anaconda](https://www.continuum.io/downloads) to easily developed Python code and its libraries. Python is already available in Anaconda, so you dont have to install it anymore. Tensorflow should be install after finishing Anaconda installation by following this [Tensorflow Installation in Conda](https://anaconda.org/conda-forge/tensorflow). We will create simple Neural Network (Perceptron) as follows:!
+Deep learning can be developed by using several tools or libraries like [Tensorflow](http://tensorflow.org), [Pytorch](http://pytorch.org) and so on. in this tutorials, we will use Tensorflow running on Python. The first step is to install environment tools like [Anaconda](https://www.continuum.io/downloads) to easily developed Python code and its libraries. Python is already available in Anaconda, so you dont have to install it anymore. Tensorflow should be install after finishing Anaconda installation by following this [Tensorflow Installation in Conda](https://anaconda.org/conda-forge/tensorflow). We will create simple Neural Network (Perceptron) as follows:
 
-[Fig.2](https://raw.github.com/tavgreen/generating_images/master/file/formula.png?raw=true "Perceptron")
+![Fig.2](https://raw.github.com/tavgreen/generating_images/master/file/formula.png?raw=true "Perceptron")
+
 
 
 ## Convolutional Neural Network ##
