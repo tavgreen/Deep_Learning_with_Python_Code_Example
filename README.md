@@ -45,12 +45,13 @@ import tensorflow as tf
 ```
 in the code above, tensorflow is aliased by tf. so later you just called 'tf' to use tensorflow
 
-- Define input data. 
+- Define input data and output data as constant. 
 ```python
 x1 = tf.constant(1.0,name='x1')
 x2 = tf.constant(0.0,name='x2')
+y_true = tf.constant(1.0,name='y_true')
 ```
-in the code above, *tf.constant* can be used to define constant value and store it into x1 and x2.
+in the code above, *tf.constant* can be used to define constant value and store it into x1, x2 and y_true.
 
 - define weight
 ```python
@@ -69,11 +70,20 @@ in the code above, we do multiplication between x1 and w1 (look the image archit
 
 - Define output layer
 ```python
-out = tf.nn.sigmoid(h1)
+y_predict = tf.nn.sigmoid(h1)
 ```
 in the code above, we give activation function(sigmoid) to h1. you can check [Tensorflow nn library](https://www.tensorflow.org/api_docs/python/tf/nn)  for more activationa function. The result is stored at 'out' variable.
 
--
+- define loss function
+```python
+loss = tf.pow((y_predict - y_true),2)
+```
+in the code above, we define loss function using Mean Square Error (MSE). we want to know how much loss y_predict(computation in your model) to ground truth (y_true)
+![Fig.3 MSE](https://wikimedia.org/api/rest_v1/media/math/render/svg/67b9ac7353c6a2710e35180238efe54faf4d9c15)
+
+- define optimizer
+
+is that finish? **NO, you have not run the model**. The model have just created, but you have not run the model. 
 
 
 ## Convolutional Neural Network ##
